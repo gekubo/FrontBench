@@ -83,8 +83,6 @@ header {
 }
 
 img.logo {
-  border-radius: 50%;
-  transform: rotate(45deg) scale(0.9);
   max-width: 100%;
   height: 72px;
   vertical-align: middle;
@@ -101,7 +99,7 @@ footer {
   padding: 15px 0;
 }
 
-.petri-one {}
+.deck {}
 
 ul.social {
   margin: 0;
@@ -111,6 +109,58 @@ ul.social {
 ul.social>li {
   list-style: none;
   display: inline;
+}
+
+.petri {
+  background: url(../img/petri-bg.png) repeat;
+  background-size: cover;
+  border-radius: 50%;
+  width: 256px;
+  height: 256px;
+  transition: all .3s ease-in-out;
+  position: relative;
+}
+
+.petri:hover {
+  border-radius: 5%;
+  cursor: pointer;
+  opacity: 1;
+  transition: all .3s ease-in-out;
+}
+
+p.scope {
+  color: #333333;
+  font-weight: 700;
+  opacity: 0;
+  text-align: center;
+  line-height: 256px;
+}
+
+.petri:hover > p {
+  opacity: 1;
+  transform: scale(1.5);
+  z-index: 999;
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  filter: blur(-90px);
+  border-radius: 5%;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.petri:hover .overlay {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -171,36 +221,30 @@ ul.social>li {
     width: 25%;
     float: left;
   }
-  .tooltip {
-    position: relative;
-    display: inline-block;
-  }
-
-  .tttext {
-    display: block;
-  }
-  .tooltip .tttext {
-    visibility: hidden;
-    width: 90px;
-    font-size: 0.6em;
-    font-weight: 700;
-    background-color: #f5f5f5;
-    color: #00ff5e;
-    text-align: center;
-    border-radius: 3px;
-    padding: 5px 0;
-    bottom: 100%;
-    margin-bottom: 1px;
-    left: 50%;
-    margin-left: -45px;
-    position: absolute;
-    z-index: 1;
-  }
-  .tooltip:hover .tttext {
-    visibility: visible;
-  }
   footer {
     height: 36px;
+  }
+  ul.social a[alt] {
+    position: relative;
+    
+  }
+  ul.social a[alt]:hover::after {
+    content: attr(alt);
+    white-space: nowrap;
+    width: 90px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+    color: #00ff5e;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    left: 50%;
+    margin-left: -45px;
+    display: block;
+    position: absolute;
+    z-index: 1;
   }
 }
 
