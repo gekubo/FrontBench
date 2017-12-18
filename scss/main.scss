@@ -1,0 +1,12 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "buttons";
+
+$bgcolor: #e5e5e5;
+$maincolor: #333333;
+$secondcolor: #1abc9c;
+
+body {
+	background-color: $bgcolor;
+}

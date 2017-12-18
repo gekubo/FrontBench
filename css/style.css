@@ -1,28 +1,28 @@
 /* Global Styles */
 body {
-  margin: 0;
   background: #e5e5e5;
   font-family: Courier New, Courier, monospace;
+  margin: 0;
 }
 
 a,
 a:active,
 a:visited,
 a:hover {
-  font-weight: bold;
   color: #333333;
+  font-weight: bold;
   text-decoration: none;
 }
 
 a:hover {
-  color: #00ff5e;
-  border-bottom: 2px solid #00ff5e;
+  color: #1abc9c;
+  border-bottom: 2px solid #1abc9c;
   padding-bottom: 2px;
 }
 
 a.external:hover::after {
   content: "\ea3b";
-  font-family: IcoMoon;
+  font-family: icon;
   margin-left: 3px;
 }
 
@@ -203,6 +203,7 @@ input:checked + .slider:before {
 .petri {
   background: url(../img/petri-bg.png) repeat;
   background-size: cover;
+  border: 7px solid #f5f5f5;
   border-radius: 50%;
   /* width: 100%;
   padding-top: 100%; 1:1 Aspect Ratio */
@@ -212,6 +213,7 @@ input:checked + .slider:before {
 
 .petri:hover {
   border-radius: 5%;
+  border: 7px solid #f5f5f5;
   cursor: pointer;
   opacity: 1;
   transition: all .3s ease-in-out;
@@ -370,8 +372,8 @@ div.box#marked {
 #globe {
   max-width: 240px;
   position: absolute;
-  top: 60px;
   left: 120px;
+  top: 60px;
   z-index: 3;
 }
 
@@ -454,6 +456,24 @@ div.box#marked {
   }
   ul.social a[alt] {
     display: none;
+  }
+  ul.social a[alt]:hover::after {
+    content: attr(alt);
+    white-space: nowrap;
+    width: 90px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+    color: #1abc9c;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    left: 50%;
+    margin-left: -45px;
+    display: block;
+    position: absolute;
+    z-index: 1;
   }
 }
 
@@ -549,17 +569,17 @@ div.box#marked {
 }
 
 @font-face {
-  font-family: 'IcoMoon';
-  src: url('../font/icomoon.eot');
-  src: url('../font/icomoon.eot#iefix') format('embedded-opentype'), url('../font/icomoon.ttf') format('truetype'), url('../font/icomoon.woff') format('woff'), url('../font/icomoon.svg') format('svg');
+  font-family: "icon";
+  src: url("../font/icomoon.eot");
+  src: url("../font/icomoon.eot#iefix") format("embedded-opentype"), url("../font/icomoon.ttf") format("truetype"), url("../font/icomoon.woff") format("woff"), url("../font/icomoon.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"],
-[class*=" icon-"] {
+[class*="icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'IcoMoon' !important;
+  font-family: "icon" !important;
   font-size: 1.5em;
   font-style: normal;
   font-weight: normal;
