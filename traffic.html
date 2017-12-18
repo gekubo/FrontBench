@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>TrafficLike | experiment#3</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <header class="container">
+      <div class="wrapper">
+        <div class="col25 left">
+            <a href="index.html"><img src="img/logo.png" alt="G3" class="logo"/></a>
+        </div>
+        <div class="col75 right">
+          <h1 class="logo">G3.lab</h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="container clear">
+      <div class="wrapper">
+        <h1>TrafficLike</h1>
+        <div class="col2">
+        <h2>Empower Yourself!</h2><small>Switch the Traffic Light</small>
+         <div class="col75">
+          <p>¡Detén los coches!</p>
+          <p>¡Haz correr a coches y peatones por igual!</p>
+          <p>¡Permite circular a los coches!</p>
+        </div>
+          <div class="col25">
+        <form name="trafficLight">
+            <label class="switcher">
+              <input type="radio" name="trafficSwitch" value="fc0107" onchange="changeColor()">
+              <span class="slider"></span>
+            </label><br />
+              <label class="switcher">
+                <input type="radio" name="trafficSwitch" value="fd8008" onchange="changeColor()">
+                <span class="slider"></span>
+              </label><br />
+              <label class="switcher">
+                  <input type="radio" name="trafficSwitch" value="21ff06" onchange="changeColor()">
+                  <span class="slider"></span>
+                </label>
+            </form>
+          </div>
+        </div>
+        <div id="traffic-light" class="col2">
+          <div id="red" class="traffic-blurb"></div>
+          <div id="orange" class="traffic-blurb"></div>
+          <div id="green" class="traffic-blurb"></div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="container clear">
+      <div class="wrapper">
+        <div class="col3 left valign"><a href="https://www.guillermogg.info/es" target="_blank" class="external">www.guillermogg.info</a></div>
+        <div class="col3 center">
+          <small>2017</small>
+        </div>
+        <div class="col3 right">
+          <ul class="social">
+            <li><a href="https://twitter.com/gekubo" target="_blank" alt="Twitter"><span class="icon-twitter"></span></a></li>
+            <li><a href="https://www.facebook.com/gekubo" target="_blank" alt="Facebook"><span class="icon-facebook2"></span></a></li>
+            <li><a href="https://www.instagram.com/gekubo" target="_blank" alt="Instagram"><span class="icon-instagram"></span></a></li>
+            <li><a href="https://github.com/gekubo" target="_blank" alt="Github"><span class="icon-github"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="js/plugin.js" type="text/javascript"></script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+  </body>
+</html>
