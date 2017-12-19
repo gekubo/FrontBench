@@ -69,6 +69,12 @@ header a:hover {
   margin: 15px 0;
 }
 
+.row {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
 .center {
   text-align: center;
 }
@@ -460,6 +466,29 @@ div.box#marked {
   display: none;
 }
 
+/* OESflu */
+@font-face {
+    font-family: "zarathustra";
+    src: url("../font/zarathustra.eot");
+    src: url("../font/zarathustra.eot?#iefix") format("embedded-opentype"),
+         url("../font/zarathustra.woff") format("woff"),
+         url("../font/zarathustra.woff2") format("woff2"),
+         url("../font/zarathustra.ttf") format("truetype"),
+         url("../font/zarathustra.svg#zarathustra") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+    #sheet {
+      max-width: 100%;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+      color: #ffffff;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
 /* Media queries for smartphones */
 @media only screen and (max-width:479px) {
   .wrapper {
@@ -492,7 +521,7 @@ div.box#marked {
   height: 156px;
 }
   
-  footer {
+footer {
     height: 36px;
   }
   ul.social a[alt] {
