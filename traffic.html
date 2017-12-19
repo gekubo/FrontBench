@@ -25,32 +25,35 @@
         <h1>TrafficLike</h1>
         <div class="col2">
         <h2>Empower Yourself!</h2><small>Switch the Traffic Light</small>
-         <div class="col75">
-          <p>¡Detén los coches!</p>
-          <p>¡Haz correr a coches y peatones por igual!</p>
-          <p>¡Permite circular a los coches!</p>
-        </div>
-          <div class="col25">
-        <form name="trafficLight">
+         <!-- <div class="col75"> -->
+          <p class="red on">Stop the cars!</p>
+          <p class="orange on">Make them all run like crazy!</p>
+          <p class="green on">Allow the cars to keep going!</p>
+        <!-- </div> -->
+        <!-- <div class="col25"> -->
+
+          <div class="button uppercase">[Change the light]</div>
+        <!-- <form name="trafficLight">
             <label class="switcher">
-              <input type="radio" name="trafficSwitch" value="fc0107" onchange="changeColor()">
+              <input type="radio" name="trafficSwitch" value="fc0107" onchange="changeColor()" /> 
+              <input type="radio" name="trafficSwitch"/>
               <span class="slider"></span>
             </label><br />
               <label class="switcher">
-                <input type="radio" name="trafficSwitch" value="fd8008" onchange="changeColor()">
+                <input type="radio" name="trafficSwitch" />
                 <span class="slider"></span>
               </label><br />
               <label class="switcher">
-                  <input type="radio" name="trafficSwitch" value="21ff06" onchange="changeColor()">
+                  <input type="radio" name="trafficSwitch" />
                   <span class="slider"></span>
                 </label>
-            </form>
+            </form>-->
           </div>
-        </div>
+        <!-- </div> -->
         <div id="traffic-light" class="col2">
-          <div id="red" class="traffic-blurb"></div>
-          <div id="orange" class="traffic-blurb"></div>
-          <div id="green" class="traffic-blurb"></div>
+          <div id="red" class="traffic-blurb red"></div>
+          <div id="orange" class="traffic-blurb orange"></div>
+          <div id="green" class="traffic-blurb green"></div>
         </div>
       </div>
     </main>
@@ -71,6 +74,7 @@
         </div>
       </div>
     </footer>
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="js/plugin.js" type="text/javascript"></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
   </body>
