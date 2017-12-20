@@ -30,6 +30,11 @@ img {
   max-width: 100%;
 }
 
+video {
+  width: 100%;
+  max-width: 100%;
+}
+
 header {
 /*  background-color: rgba(0, 255, 93, 0.7); 00ff5e; */
   background-color: rgba(26, 188, 156, 0.7);
@@ -488,6 +493,15 @@ div.box#marked {
       -ms-user-select: none;
       user-select: none;
     }
+
+/* Oddisey */
+
+.coupon {
+  border: 2px solid green;
+  background-color: #fefefe;
+  width: 100%;
+  height: 300px;
+}
 
 /* Media queries for smartphones */
 @media only screen and (max-width:479px) {

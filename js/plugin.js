@@ -1,7 +1,7 @@
-/*TRAFFICLIKE*/
+/* TrafficLike */
 $( document ).ready( function() {
 
-  $( ".button" ).click( function() {
+  $( "#trafficSwitch" ).click( function() {
 /*    console.log($( "#red" ).hasClass( "on" ));
     if ($( "#red" ).hasClass( "on" ) == false &&
         $( "#orange" ).hasClass( "on" ) == false &&
@@ -12,26 +12,24 @@ $( document ).ready( function() {
     }*/
 
     if ($( "#red" ).hasClass( "on" ) == true) {
-      $( "#red" ).removeClass( "on" );
+        $( "#red" ).removeClass( "on" );
 
-      $( "#orange" ).addClass( "on" );
+        $( "#orange" ).addClass( "on" );
     }
 
     else if ($( "#orange" ).hasClass( "on" ) == true) {
-      $( "#orange" ).removeClass( "on" );
+        $( "#orange" ).removeClass( "on" );
 
-      $( "#green" ).addClass( "on" );
+        $( "#green" ).addClass( "on" );
     }
 
     else {
-      $( "#green" ).removeClass( "on" );
+        $( "#green" ).removeClass( "on" );
 
-      $( "#red" ).addClass( "on" );
+        $( "#red" ).addClass( "on" );
     }
 
   });
-
-});
 
 
 /*$(document).ready(function(){
@@ -120,15 +118,9 @@ if(interruptor != false) {
 }
 }*/
 
-/* TABBIMG */
+/* Tabbimg */
 
-$( document ).ready( function() {
-
-/*CAMBIO DE IMÁGENES AL HACER CLIC*/
-function change () {
-
-}
-
+/* CAMBIO DE IMÁGENES AL HACER CLIC */
   $( "#button1" ).click( function() {
 
     $( this ).addClass( "btnhover" );
@@ -162,7 +154,7 @@ function change () {
 
   });
 
-/*AÑADIENDO Y ELIMINANDO CLASES CSS*/
+/* AÑADIENDO Y ELIMINANDO CLASES CSS */
 
 /*  $( "#button1" ).click( function() {
 
@@ -197,7 +189,7 @@ function change () {
 
   });*/
 
-/*USANDO LAS FUNCIONES SHOW / HIDE DE JQUERY*/
+/* USANDO LAS FUNCIONES SHOW / HIDE DE JQUERY */
 
 /*  $( "#button1" ).click( function() {
 
@@ -233,38 +225,47 @@ function change () {
   });
 */
 
-/* OESFLU */
+/* Codeuniform */
 
-var s=window.screen;
-var width = sheet.width = s.width;
-var height = sheet.height;
-var yPositions = Array(300).join(0).split("");
-var ctx=sheet.getContext("2d");
+  var s = window.screen;
+  var width = sheet.width = s.width;
+  var height = sheet.height;
+  var yPositions = Array(300).join(0).split("");
+  var ctx = sheet.getContext("2d");
 
-var draw = function () {
-  ctx.fillStyle = "rgba(250,250,250,.05)";
-  ctx.fillRect(0,0,width,height);
-  ctx.fillStyle = "#333333";
-  ctx.font = "20pt zarathustra";
-  yPositions.map(function(y, index){
-    text = String.fromCharCode(1e2+Math.random()*50);
-    x = (index * 30)+10;
-    sheet.getContext("2d").fillText(text, x, y);
-  if(y > 100 + Math.random()*1e4)
-  {
-    yPositions[index] = 0;
+  var draw = function () {
+    ctx.fillStyle = "rgba(250,250,250,.05)";
+    ctx.fillRect(0,0,width,height);
+    ctx.fillStyle = "#333333";
+    ctx.font = "20pt zarathustra";
+    yPositions.map(function(y, index){
+      text = String.fromCharCode(1e2 + Math.random() * 50);
+      x = (index * 30) + 10;
+      sheet.getContext("2d").fillText(text, x, y);
+    if(y > 100 + Math.random() * 1e4) {
+        yPositions[index] = 0;
+      }
+    else {
+        yPositions[index] = y + 10;
+    }
+    });
+  };
+  RunMatrix();
+  function RunMatrix() {
+  if(typeof Game_Interval != "undefined") clearInterval(Game_Interval);
+      Game_Interval = setInterval(draw, 33);
   }
-  else
-  {
-      yPositions[index] = y + 10;
-  }
-  });
-};
-RunMatrix();
-function RunMatrix()
-{
-if(typeof Game_Interval != "undefined") clearInterval(Game_Interval);
-    Game_Interval = setInterval(draw, 33);
-}
+
+/* SuperbVid */
+
+
+
+/* Oddisey */
+
+/*  $( "#getLucky" ).click( function() {
+    var data = JSON.parse( loteria );
+    $.get("http://192.168.201.102/loteria"), function ()
+    $( ".coupon" ).html( "El senor " + data.nombre " ha ganado con el número " + data.numero);
+  });*/
 
 }); // End of document.ready

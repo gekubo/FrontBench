@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>XXX | experiment#X</title>
+  <title>SuperbVid | experiment#7</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="x-ua-Compatible" content="ie=edge">
@@ -23,8 +23,24 @@
   
   <main class="container clear">
     <div class="wrapper">
-      <h1>MY TITLE HERE</h1>
-        MY CONTENT HERE
+      <h1>SuperbVid</h1>
+      <div class="col75">
+        <video id="supervid">
+          <source src="media/movie.mp4" type="video/mp4">
+          <source src="media/movie.webm" type="video/webm">
+          <source src="media/movie.ogv" type="video/ogg">
+          Your browser does not support the HTML video tag.
+        </video> 
+      </div>
+      <div class="col25">
+        <div id="playme" onclick="playVid()" class="button">Play</div>
+        <div id="playme" onclick="pauseVid()" class="button">Pause</div>
+        <div id="playme" onclick="togglePlay()" class="button">Play / Pause</div>
+        <div id="playme" onclick="enableControls()" class="button">Show Controls</div>
+        <div id="playme" onclick="disableControls()" class="button">Hide Controls</div>
+        <div id="playme" onclick="toogleControls()" class="button">Show / Hide Controls</div>
+        <div id="playme" onclick="checkControls()" class="button">Check Controls</div>
+      </div>
     </div>
   </main>
 
@@ -45,7 +61,7 @@
     </div>
   </footer>
   <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-  <script src="js/plugin.js" type="text/javascript"></script>
+  <script src="js/video.js" type="text/javascript"></script>
   <noscript>Sorry, your browser does not support JavaScript!</noscript>
 </body>
 </html>
