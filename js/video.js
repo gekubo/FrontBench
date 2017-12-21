@@ -5,9 +5,23 @@ vid.onended = function() {
     vid.controls = true;
 };
 
-function playVid() {
-    vid.play();
+vid.onvolumechange = function() {
+    alert("The volume has been changed");
 };
+
+/*var play = document.getElementById("playVid");
+
+play.onclick = function() {
+  vid.play();
+};*/
+
+/*function playVid() {
+    vid.play();
+};*/
+
+  $( "#playVid" ).click( function() {
+        vid.play();
+  });
 
 function pauseVid() {
     vid.pause();
@@ -42,11 +56,11 @@ function disableControls() {
 };
 
 function toggleControls() {
-  if (vid.controls = false) {
-      vid.controls = true;
+  if (vid.hasAttribute("controls")) {
+      vid.removeAttribute("controls")   
   }
   else {
-    vid.controls = false;
+     vid.setAttribute("controls","controls")   
   }
 };
 

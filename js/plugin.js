@@ -226,8 +226,7 @@ if(interruptor != false) {
 */
 
 /* Codeuniform */
-
-  var s = window.screen;
+/*  var s = window.screen;
   var width = sheet.width = s.width;
   var height = sheet.height;
   var yPositions = Array(300).join(0).split("");
@@ -254,18 +253,102 @@ if(interruptor != false) {
   function RunMatrix() {
   if(typeof Game_Interval != "undefined") clearInterval(Game_Interval);
       Game_Interval = setInterval(draw, 33);
-  }
+  }*/
 
 /* SuperbVid */
+  var vid = document.getElementById("supervid"); // $("#supervid");
 
+  vid.onended = function() {
+    alert("That's all folks");
+    vid.controls = true;
+  };
 
+  vid.onvolumechange = function() {
+    alert("The volume has been changed");
+  };
 
-/* Oddisey */
+  $( "#toggleVid" ).click( function() {
 
-/*  $( "#getLucky" ).click( function() {
-    var data = JSON.parse( loteria );
-    $.get("http://192.168.201.102/loteria"), function ()
-    $( ".coupon" ).html( "El senor " + data.nombre " ha ganado con el número " + data.numero);
-  });*/
+/*    if (vid.getAttribute("src") == "media/movie.mp4") {
+        vid.setAttribute("src", "media/movie_alt.mp4");  
+    }
+    else {
+        vid.setAttribute("src", "media/movie.mp4");
+    }
+    vid.load();*/
+    
+    if ($("#supervid").attr("src") == ("media/movie_alt.mp4")) {
+    $("#supervid").attr("src","media/movie.mp4");  
+    }
+    else {
+    $("#supervid").attr("src","media/movie_alt.mp4");
+    }
+    vid.load();
+  });
+  
+  $( "#playVid" ).click( function() {
+      vid.play();
+  });
+
+  $( "#pauseVid" ).click( function() {
+      vid.pause();
+  });
+
+  $( "#togglePlay" ).click( function() {
+      if (vid.paused == true) {
+        vid.play();
+      }
+      else {
+      vid.pause();
+      }
+  });
+
+  $( "#enableControls" ).click( function() {
+      vid.controls = true;
+      vid.load();
+  });
+
+  $( "#disableControls" ).click( function() {
+      vid.controls = false;
+      vid.load();
+  });
+
+  $( "#toggleControls" ).click( function() {
+      if (vid.hasAttribute("controls")) {
+      vid.removeAttribute("controls")   
+      }
+      else {
+      vid.setAttribute("controls","controls")   
+      }
+  });
+
+  $( "#checkControls" ).click( function() {
+      alert(vid.controls);
+  });
+
+  $( "#advance3s" ).click( function() {
+      vid.currentTime += 3;
+  });
+
+/* Lotto */
+
+  $( "#getLucky" ).click( function() {
+
+    // pedir por AJAX 
+    $.ajax ({
+      "method": "get",
+      "url": "http://192.168.201.102/loteria"
+    })
+
+    // "done" es un evento que te parsea el JSON cuando lo ha recibido del server
+    .done( function( data ) {
+      var response = JSON.parse( data );
+
+    // pinto por pantalla
+    $( ".coupon p" ).html("Congrats " + response.nombre + " you have won the lottery with this lucky number " + response.numero + " !!!");
+    
+    });
+
+  });
 
 }); // End of document.ready
