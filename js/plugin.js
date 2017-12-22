@@ -225,36 +225,6 @@ if(interruptor != false) {
   });
 */
 
-/* Codeuniform */
-/*  var s = window.screen;
-  var width = sheet.width = s.width;
-  var height = sheet.height;
-  var yPositions = Array(300).join(0).split("");
-  var ctx = sheet.getContext("2d");
-
-  var draw = function () {
-    ctx.fillStyle = "rgba(250,250,250,.05)";
-    ctx.fillRect(0,0,width,height);
-    ctx.fillStyle = "#333333";
-    ctx.font = "20pt zarathustra";
-    yPositions.map(function(y, index){
-      text = String.fromCharCode(1e2 + Math.random() * 50);
-      x = (index * 30) + 10;
-      sheet.getContext("2d").fillText(text, x, y);
-    if(y > 100 + Math.random() * 1e4) {
-        yPositions[index] = 0;
-      }
-    else {
-        yPositions[index] = y + 10;
-    }
-    });
-  };
-  RunMatrix();
-  function RunMatrix() {
-  if(typeof Game_Interval != "undefined") clearInterval(Game_Interval);
-      Game_Interval = setInterval(draw, 33);
-  }*/
-
 /* SuperbVid */
   var vid = document.getElementById("supervid"); // $("#supervid");
 
@@ -352,3 +322,35 @@ if(interruptor != false) {
   });
 
 }); // End of document.ready
+
+/* Codeuniform */
+  var canvas = document.getElementById("sheet");
+  var ctx = canvas.getContext("2d");
+  var c = window.screen;
+  var width = canvas.width = c.width;
+  var height = canvas.height;
+  var yPositions = Array(300).join(0).split("");
+  
+  var draw = function () {
+    ctx.fillStyle = "rgba(250,250,250,.05)";
+    ctx.fillRect(0,0,width,height);
+    ctx.font = "20pt zarathustra";
+    ctx.fillStyle = "#333333";
+    yPositions.map(function(y, index){
+      text = String.fromCharCode(1e2 + Math.random() * 50);
+      x = (index * 30) + 10;
+      sheet.getContext("2d").fillText(text, x, y);
+
+      if(y > 100 + Math.random() * 1e4) {
+        yPositions[index] = 0;
+      }
+      else {
+        yPositions[index] = y + 10;
+      }
+    });
+  };
+  function RunMatrix() {
+  if(typeof interval != "undefined") clearInterval(interval);
+      interval = setInterval(draw, 33);
+  };
+  RunMatrix();
