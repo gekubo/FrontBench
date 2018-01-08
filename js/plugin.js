@@ -1,6 +1,16 @@
-/* TrafficLike */
-$( document ).ready( function() {
+$(  document).ready( function() {
 
+  /* General */
+  $(window).scroll(function(){
+    if ($(window).scrollTop() >= 96) { // El valor debe ser igual a la altura del header
+       $("header").addClass("sticky");
+    }
+    else {
+       $("header").removeClass("sticky");
+    }
+  });
+
+  /* TrafficLike */
   $( "#trafficSwitch" ).click( function() {
 /*    console.log($( "#red" ).hasClass( "on" ));
     if ($( "#red" ).hasClass( "on" ) == false &&
@@ -310,7 +320,7 @@ if(interruptor != false) {
       "url": "http://192.168.201.102/loteria"
     })
 
-    // "done" es un evento que te parsea el JSON cuando lo ha recibido del server
+    // "done" es un evento que te parsea el JSON cuando lo ha recibido del servidor
     .done( function( data ) {
       var response = JSON.parse( data );
 
