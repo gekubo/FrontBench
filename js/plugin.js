@@ -1,4 +1,4 @@
-$(  document).ready( function() {
+$(document).ready(function() {
 
   /* General */
   $(window).scroll(function(){
@@ -330,6 +330,12 @@ if(interruptor != false) {
     });
 
   });
+
+  /* Griffin */
+
+  //javascript, jQuery
+  var loadGif = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=dc6zaTOxFJmzC&limit=5");
+  loadGif.done(function(data) { console.log("Habemus datos", data); });
 
 }); // End of document.ready
 
