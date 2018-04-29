@@ -541,7 +541,6 @@ div.box#marked {
   
   .col2,
   .col3,
-  .col4,
   .colLeft,
   .colRight {
     width: 100%;
@@ -549,8 +548,22 @@ div.box#marked {
     margin: 0;
   }
 
+  .col4 {
+    width: 45%;
+    float: left;
+    margin: 0;
+  }
+
+  .col4:nth-child(2n+1) {
+  margin-right: 5%;
+  }
+
   .petri {
     margin-top: 15px;
+  }
+
+  .petri:hover .scope {
+    margin-top: 1px;
   }
 
   footer {
